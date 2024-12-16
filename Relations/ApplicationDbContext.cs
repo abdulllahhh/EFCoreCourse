@@ -158,6 +158,11 @@ namespace Relations
                 .WithMany(a => a.authors);
 
             modelBuilder.Entity<BookDTO>(e => e.HasNoKey().ToView(null));
+
+            modelBuilder.Entity<Post>()
+                .HasQueryFilter(b => !b.isDeleted);
+            
+            // modelBuilder.Entity<Blog>().HasQueryFilter(b => b.Post.Count >0);
         }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Tag> Tags { get; set; }
