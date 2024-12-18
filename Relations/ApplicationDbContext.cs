@@ -157,12 +157,28 @@ namespace Relations
                 .HasOne(n => n.nationality)
                 .WithMany(a => a.authors);
 
-            modelBuilder.Entity<BookDTO>(e => e.HasNoKey().ToView(null));
+            modelBuilder.Entity<BookDTO>(e => e.HasNoKey().ToView(null)); //dont map with the migration
 
-            modelBuilder.Entity<Post>()
-                .HasQueryFilter(b => !b.isDeleted);
-            
+            /*modelBuilder.Entity<Post>()
+                .HasQueryFilter(b => !b.isDeleted);*/
+
             // modelBuilder.Entity<Blog>().HasQueryFilter(b => b.Post.Count >0);
+
+            modelBuilder.Entity<PostTag>()
+                .HasKey(pt => new { pt.postId, pt.tagId });
+
+            modelBuilder.Entity<PostTag>()
+                .HasOne(pt => pt.post)
+                .WithMany(p => p.postTags)
+                .HasForeignKey(pt => pt.postId)
+                .OnDelete(DeleteBehavior.Restrict); // Enable Cascade Delete
+
+            modelBuilder.Entity<PostTag>()
+                .HasOne(pt => pt.Tag)
+                .WithMany(t => t.postTags)
+                .HasForeignKey(pt => pt.tagId)
+                .OnDelete(DeleteBehavior.Restrict); // Enable Cascade Delete
+
         }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Tag> Tags { get; set; }

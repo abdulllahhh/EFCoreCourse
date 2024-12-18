@@ -11,6 +11,10 @@ namespace Relations
         public static async Task Main(string[] args)
         {
             var _context = new ApplicationDbContext();
+            var minimum_nationality_Id = _context.Nationalities.ToList().MinBy(i => i.NationalityId);
+            
+            Console.WriteLine(minimum_nationality_Id.NationalityId);
+            
             
         }
     }
