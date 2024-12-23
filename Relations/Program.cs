@@ -11,11 +11,16 @@ namespace Relations
         public static async Task Main(string[] args)
         {
             var _context = new ApplicationDbContext();
-            var minimum_nationality_Id = _context.Nationalities.ToList().MinBy(i => i.NationalityId);
+            /*_context.Nationalities.Where(i => i.NationalityId < 20).ExecuteDelete();
+
+            _context.Nationalities
+                .Where(i => i.NationalityId > 1000)
+                .ExecuteUpdate(x => x.SetProperty(n => n.Name , "eqyptinan"));*/
             
-            Console.WriteLine(minimum_nationality_Id.NationalityId);
-            
-            
+            /*_context.Nationalities
+                .ExecuteUpdate(x => x.SetProperty(n => n.Name, n => n.Name + " updated"));*/
+/*            _context.Nationalities.ExecuteUpdate(x => x.SetProperty(n => n.Name, n => n.Name.Replace("updated", "")));
+*/            
         }
     }
 }
