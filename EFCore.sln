@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore", "EFCore\EFCore.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Relations", "Relations\Relations.csproj", "{EDAC6638-DC88-442A-A97C-A911CD940863}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApi", "MoviesApi\MoviesApi.csproj", "{30718CBC-0F29-4A14-B03D-00E67FF2DE5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApi2", "MoviesApi2\MoviesApi2.csproj", "{68081843-5C1B-440B-8B39-65B06B4A2BE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{EDAC6638-DC88-442A-A97C-A911CD940863}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDAC6638-DC88-442A-A97C-A911CD940863}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDAC6638-DC88-442A-A97C-A911CD940863}.Release|Any CPU.Build.0 = Release|Any CPU
-		{30718CBC-0F29-4A14-B03D-00E67FF2DE5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{30718CBC-0F29-4A14-B03D-00E67FF2DE5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{30718CBC-0F29-4A14-B03D-00E67FF2DE5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{30718CBC-0F29-4A14-B03D-00E67FF2DE5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68081843-5C1B-440B-8B39-65B06B4A2BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68081843-5C1B-440B-8B39-65B06B4A2BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68081843-5C1B-440B-8B39-65B06B4A2BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68081843-5C1B-440B-8B39-65B06B4A2BE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
