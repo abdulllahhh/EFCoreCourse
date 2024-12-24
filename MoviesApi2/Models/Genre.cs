@@ -9,6 +9,5 @@ namespace MoviesApi2.Models
         public byte Id { get; set; }
         [MaxLength(100)]
         public string Name { get; set; }
-        public string Description { get; set; }
     }
 }
