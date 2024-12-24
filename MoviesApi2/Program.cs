@@ -1,13 +1,20 @@
 
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
-
+using MoviesApi2.Models;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var connString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<ApplicationDbContext>(options => 
+    options.UseSqlServer(connectionString: connString)
+    
+    );
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddCors();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(
@@ -42,6 +49,23 @@ builder.Services.AddSwaggerGen(
                 In = ParameterLocation.Header,
                 Description = "Enter JWT key" // appears for user that tests end points
             });
+
+            options.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        },
+                        Name = "Bearer",
+                        In = ParameterLocation.Header
+                    },
+                    new List<string>()
+                }
+            });
         }
 
     );
@@ -56,6 +80,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(
+    c => c.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod()
+    );
 
 app.UseAuthorization();
 
