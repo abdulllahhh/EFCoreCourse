@@ -8,6 +8,5 @@ namespace MoviesApi.Models
         {
         }
 
-
     }
 }
