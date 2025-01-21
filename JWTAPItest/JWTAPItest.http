@@ -1,0 +1,6 @@
+@JWTAPItest_HostAddress = http://localhost:5058
+
+GET {{JWTAPItest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

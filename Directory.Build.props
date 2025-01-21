@@ -4,13 +4,19 @@
     <PackageReference Update="Microsoft.EntityFrameworkCore" Version="7.0.11" />
     
     <!-- EF Core SQL Server provider -->
-    <PackageReference Update="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.11" />
 
     <!-- Include any other packages here -->
     <PackageReference Update="Microsoft.EntityFrameworkCore.tools" Version="7.0.11" />
     
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.11" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.11" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.11" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.11" />
     
   </ItemGroup>
 </Project>
